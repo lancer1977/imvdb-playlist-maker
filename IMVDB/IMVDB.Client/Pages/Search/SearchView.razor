@@ -1,0 +1,43 @@
+﻿@page "/"
+
+@page "/musicvideos"
+@rendermode InteractiveWebAssembly
+ @inherits ReactiveUI.Blazor.ReactiveInjectableComponentBase<IMVDB.Gui.Pages.SearchViewModel>
+<h1>Music Video Finder</h1>
+@if (ViewModel == null || ViewModel.IsLoading)
+{
+    <p>Loading...</p>
+    return;
+}
+else
+    {
+
+    <div class="form-group">
+        <input type="password" @bind="ViewModel.ApiKey" placeholder="Enter API Key" class="form-control" />
+        <input type="text" @bind="ViewModel.ArtistName" placeholder="Enter Artist Name" class="form-control mt-2" />
+        <button @onclick="ViewModel.SearchVideos" class="btn btn-primary mt-2">Search</button>
+    </div>
+
+@if (ViewModel.VideoUrls?.Any() == true)
+{
+    <ul class="list-group mt-3">
+        @foreach (var url in ViewModel.VideoUrls)
+        {
+            <li class="list-group-item">
+                <a href="@url" target="_blank">@url</a>
+            </li>
+        }
+    </ul>
+
+    <h2 class="mt-4">Plain Text URLs</h2>
+    <textarea class="form-control" rows="10" readonly>@ViewModel.PlainTextUrls</textarea>
+    <button @onclick="ViewModel.CopyToClipboard" class="btn btn-success mt-2">Copy to Clipboard</button>
+}
+
+
+@if (!string.IsNullOrEmpty(ViewModel.ErrorMessage))
+{
+    <div class="alert alert-danger mt-3">@ViewModel.ErrorMessage</div>
+}
+}
+ 
