@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\API.IMVDB\PolyhydraGames.IMVDB.Api\PolyhydraGames.IMVDB.csproj" />
+    <ProjectReference Include="..\..\APIs\API.IMVDB\PolyhydraGames.IMVDB.Api\PolyhydraGames.IMVDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

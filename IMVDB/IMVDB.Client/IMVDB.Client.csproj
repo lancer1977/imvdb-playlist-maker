@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
@@ -15,8 +15,10 @@
     <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
   </ItemGroup>
 
+  <!-- Reference the API project for IMVDB service contracts -->
+  <!-- Using full path to API.IMVDB -->
   <ItemGroup>
-    <ProjectReference Include="..\..\..\API.IMVDB\PolyhydraGames.IMVDB.Api\PolyhydraGames.IMVDB.csproj" />
+    <ProjectReference Include="..\..\..\APIs\API.IMVDB\PolyhydraGames.IMVDB.Api\PolyhydraGames.IMVDB.csproj" />
   </ItemGroup>
- 
+
 </Project>
