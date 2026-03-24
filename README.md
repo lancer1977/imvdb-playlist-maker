@@ -89,3 +89,9 @@ Primary framework dependencies found in the project files:
 - There is no solution file checked into this repository right now, so use the project-file commands above.
 - `IMVDB.Client` currently targets `net10.0`, while the server and shared project target `net9.0`.
 - The web clients reference an API project outside this repository; keep that path available when building locally.
+
+
+## 📖 Documentation
+Detailed documentation can be found in the following sections:
+- [Feature Index](./docs/features/README.md)
+- [Core Capabilities](./docs/features/core-capabilities.md)
